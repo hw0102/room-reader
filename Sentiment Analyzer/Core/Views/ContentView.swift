@@ -6,10 +6,13 @@
 //
 
 import SwiftUI
+import SwiftData
 
 struct ContentView: View {
     
     @State private var text = ""
+    @Query private var responses: [Response]
+    
     var body: some View {
         NavigationStack {
             ScrollView {
@@ -18,8 +21,10 @@ struct ContentView: View {
                 
             }
         }
-        .safeAreaInset(edge: .bottom) {
+        .task {
             
+        }
+        .safeAreaInset(edge: .bottom) {
             HStack {
                 TextField("What's on your mind?", text: $text, axis: .vertical)
                     .textFieldStyle(.roundedBorder)
@@ -37,4 +42,5 @@ struct ContentView: View {
 
 #Preview {
     ContentView()
+        .modelContainer(Response.previewContainer)
 }

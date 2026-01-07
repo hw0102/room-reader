@@ -6,11 +6,19 @@
 //
 
 import Foundation
+import SwiftData
 
-struct Response: Identifiable {
-    let id: UUID = UUID();
-    let text: String;
-    let sentiment: Sentiment;
+@Model
+class Response {
+    //let id: UUID = UUID();
+    
+    init(text: String, sentiment: Sentiment) {
+        self.text = text
+        self.sentiment = sentiment
+    }
+    
+    var text: String
+    var sentiment: Sentiment
 }
 
 extension Response {
@@ -18,4 +26,16 @@ extension Response {
         .init(text: "I love this job", sentiment: .positive),
         .init(text: "I hate this job", sentiment: .negative)
     ]
+    
+    @MainActor
+    static let previewContainer: ModelContainer = {
+        let container = try! ModelContainer(for: Response.self, configurations: ModelConfiguration(isStoredInMemoryOnly: true))
+        
+        for response in Response.samples {
+            container.mainContext.insert(response)
+        }
+        
+        return container
+    }()
 }
+

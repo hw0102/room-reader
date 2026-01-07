@@ -8,7 +8,7 @@
 import Charts
 import SwiftUI
 
-enum Sentiment: String, Plottable {
+enum Sentiment: String, Plottable, Codable {
     case positive, moderate, negative
     
     init(_ score: Double) {

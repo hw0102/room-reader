@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import SwiftData
 
 @main
 struct Sentiment_AnalyzerApp: App {
@@ -13,5 +14,6 @@ struct Sentiment_AnalyzerApp: App {
         WindowGroup {
             ContentView()
         }
+        .modelContainer(for: Response.self)
     }
 }

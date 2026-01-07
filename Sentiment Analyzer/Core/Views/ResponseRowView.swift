@@ -8,11 +8,24 @@
 import SwiftUI
 
 struct ResponseRowView: View {
+    let response: Response
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        HStack(alignment: .center) {
+            Text(response.text)
+            Spacer()
+            Image(systemName: response.sentiment.icon)
+                .frame(width: 20, height: 20)
+                .foregroundStyle(.white)
+                .padding(6)
+                .background(response.sentiment.color, in: RoundedRectangle(cornerRadius: 8))
+        }
+        
+
     }
 }
 
 #Preview {
-    ResponseRowView()
+    ResponseRowView(response: .samples[0])
+        .padding(.horizontal)
 }
