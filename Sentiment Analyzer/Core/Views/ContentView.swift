@@ -8,14 +8,30 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    @State private var text = ""
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        NavigationStack {
+            ScrollView {
+                Text("Chart")
+                Text("Overview Section")
+                
+            }
         }
-        .padding()
+        .safeAreaInset(edge: .bottom) {
+            
+            HStack {
+                TextField("What's on your mind?", text: $text, axis: .vertical)
+                    .textFieldStyle(.roundedBorder)
+                    .lineLimit(10)
+                
+                Button("Done") {
+                    print("hello")
+                }
+            }
+            .padding()
+            .background(Material.thin)
+        }
     }
 }
 
