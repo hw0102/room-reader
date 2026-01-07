@@ -5,8 +5,8 @@
 //  Created by Hello World on 1/7/26.
 //
 
-import Foundation
 import Charts
+import SwiftUI
 
 enum Sentiment: String, Plottable {
     case positive, moderate, negative
@@ -25,15 +25,41 @@ enum Sentiment: String, Plottable {
 
 
 extension Sentiment {
+    
+    
+    /// Text representation of a Sentiment instance
     var description: String {
         switch self {
-            
         case .positive:
             "Positive"
         case .moderate:
             "Moderate"
         case .negative:
             "Negative"
+        }
+    }
+    
+    /// Associated icon of a Sentiment instance
+    var icon: String {
+        switch self {
+        case .positive:
+            "chevron.up.2"
+        case .moderate:
+            "chevron.down.2"
+        case .negative:
+            "minus"
+        }
+    }
+    
+    /// Associated color of a Sentiment instance
+    var color: Color {
+        switch self {
+        case .positive:
+            .teal
+        case .moderate:
+            .red
+        case .negative:
+            .gray
         }
     }
 }
