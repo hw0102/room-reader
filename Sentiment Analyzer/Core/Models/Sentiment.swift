@@ -48,9 +48,9 @@ extension Sentiment {
         case .positive:
             "chevron.up.2"
         case .moderate:
-            "chevron.down.2"
-        case .negative:
             "minus"
+        case .negative:
+            "chevron.down.2"
         }
     }
     
@@ -60,9 +60,9 @@ extension Sentiment {
         case .positive:
             .teal
         case .moderate:
-            .red
-        case .negative:
             .gray
+        case .negative:
+            .red
         }
     }
 }
