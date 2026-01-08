@@ -84,7 +84,7 @@ private struct SentimentPillView: View {
                     .font(.caption)
                     .fontWeight(.semibold)
             }
-            Text(percentage, format: .number)
+            Text(percentage, format: .percent)
                 .font(.caption)
                 .foregroundStyle(.secondary)
         }

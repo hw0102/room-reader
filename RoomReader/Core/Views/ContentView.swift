@@ -56,8 +56,8 @@ struct ContentView: View {
                 Button("Done") {
                     let score = Scorer.shared.score(text)
                     modelContext.insert(Response(text: text, sentiment: .init(score)))
-                    text = ""
                     impactTrigger.toggle()
+                    text = ""
                 }
                 .disabled(text.isEmpty)
             }
