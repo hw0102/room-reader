@@ -8,6 +8,9 @@ RoomReader is an iOS app that helps quantify the sentiment in a room and reach a
 - Overview summary with "overall" and "leaning" sentiment
 - Lightweight, local-first data storage
 
+## Demo
+![demo](https://github.com/hw0102/room-reader/demo.gif)
+
 ## Tech Stack
 - SwiftUI
 - SwiftData
@@ -35,12 +38,6 @@ If you want to run this project on your own device or sign it with your Apple ID
 
 ## Notes
 - This project is meant as a portfolio piece and a lightweight demo of sentiment aggregation in SwiftUI.
-
-## Screenshots
-Add screenshots here:
-- `screenshots/overview.png`
-- `screenshots/chart.png`
-- `screenshots/entry.png`
 
 ## Future Ideas
 - Export/share summary results
