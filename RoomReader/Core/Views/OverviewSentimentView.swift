@@ -56,7 +56,7 @@ struct OverviewSentimentView: View {
                 
                 Spacer()
                 
-                Text("\(sentiments.count) \(sentiments.count > 1 ? "responses" : "response")")
+                Text("\(sentiments.count) \(sentiments.count == 1 ? "response" : "responses")")
                 
             }
             
