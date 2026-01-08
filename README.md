@@ -9,7 +9,7 @@ RoomReader is an iOS app that helps quantify the sentiment in a room and reach a
 - Lightweight, local-first data storage
 
 ## Demo
-![demo](https://github.com/hw0102/room-reader/demo.gif)
+![demo](demo.gif)
 
 ## Tech Stack
 - SwiftUI
