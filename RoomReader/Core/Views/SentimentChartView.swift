@@ -17,19 +17,15 @@ struct SentimentChartView: View {
         Chart(chartData, id: \.sentiment) { item in
             SectorMark(
                 angle: .value("Type", item.count),
-                innerRadius: .ratio(0.75),
-                //outerRadius: .inset(10),
-                //angularInset: 1
+                innerRadius: .ratio(0.618),
             )
-            //.cornerRadius(4)
             .foregroundStyle(by: .value("sentiment", item.sentiment))
-            //.foregroundStyle(by: item.sentiment)
         }
-//        .overlay {
-//            Image(systemName: "location")
-//                .resizable()
-//                .frame(width: 48, height: 48)
-//        }
+        .overlay {
+            if (sentiments.isEmpty) {
+                ContentUnavailableView("No Responses Yet", systemImage: "chart.pie", description: Text("Add some responses to see sentiment breakdown"))
+            }
+        }
         .chartLegend(position: .trailing, alignment: .center)
         .chartForegroundStyleScale([
             Sentiment.positive: Sentiment.positive.color,
@@ -38,6 +34,7 @@ struct SentimentChartView: View {
         ])
         .animation(.bouncy, value: sentiments)
         .frame(height: 200)
+        .safeAreaPadding(.horizontal)
     }
 
     
@@ -55,4 +52,8 @@ struct SentimentChartView: View {
 
 #Preview {
     SentimentChartView(sentiments: Sentiment.examples)
+}
+
+#Preview("Empty") {
+    SentimentChartView(sentiments: [])
 }

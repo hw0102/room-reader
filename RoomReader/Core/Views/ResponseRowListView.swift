@@ -24,6 +24,11 @@ struct ResponseRowListView: View {
             }
         }
         .listStyle(.plain)
+        .overlay {
+            if(responses.isEmpty) {
+                ContentUnavailableView("No responses yet", systemImage: "list.bullet.indent", description: Text("Add a response to start"))
+            }
+        }
         .animation(.default, value: responses)
     }
 }

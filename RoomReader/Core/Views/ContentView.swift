@@ -18,13 +18,16 @@ struct ContentView: View {
     var body: some View {
         NavigationStack {
             SentimentChartView(sentiments: responses.map(\.sentiment))
+                .padding(.bottom, 8)
             
             OverviewSentimentView(sentiments: responses.map(\.sentiment))
+                .navigationTitle("RoomReader")
+                .padding(.bottom, 10)
                 
             ResponseRowListView(responses: responses, onSwipeDelete: { response in
                 modelContext.delete(response)
             })
-            .navigationTitle("RoomReader")
+            
         }
         .sensoryFeedback(.impact, trigger: impactTrigger)
         .safeAreaInset(edge: .bottom) {
@@ -50,4 +53,9 @@ struct ContentView: View {
 #Preview {
     ContentView()
         .modelContainer(Response.previewContainer)
+}
+
+#Preview("Empty") {
+    ContentView()
+        .modelContainer(for: Response.self)
 }
