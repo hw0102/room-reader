@@ -42,10 +42,12 @@ Add screenshots here:
 - `screenshots/chart.png`
 - `screenshots/entry.png`
 
-## Roadmap
+## Future Ideas
 - Export/share summary results
 - Add trend view over time
 - Improve sentiment model options
+- Support multiple rooms
+- Real-time room polling
 
 ## Contributing
 Suggestions and feedback are welcome. If you want to contribute, open an issue with a clear description of the change or improvement.
